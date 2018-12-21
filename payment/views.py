@@ -1,6 +1,6 @@
 # from django.shortcuts import render
+# https://mpesa-fa.herokuapp.com/ | https://git.heroku.com/mpesa-fa.git
 
-from pprint import pprint
 from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework.response import Response

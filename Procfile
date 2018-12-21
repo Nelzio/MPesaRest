@@ -1,0 +1,1 @@
+web: gunicorn mPesa.wsgi --log-file -
