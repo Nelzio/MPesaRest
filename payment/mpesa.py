@@ -1,6 +1,6 @@
 from pprint import pprint
 
-from .portalsdk import APIContext, APIMethodType, APIRequest
+from . portalsdk import APIContext, APIMethodType, APIRequest
 
 
 def payment(**kwargs):  # antes main sem argumento | passar os values
