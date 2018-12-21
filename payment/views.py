@@ -27,5 +27,5 @@ def purchase_api(request, format=None):
         '''
 
         # print(request.data['card'])
-        return Response(status=result.status_code, result.body)
+        return Response(result.body, status=result.status_code)
     return Response(status=status.HTTP_400_BAD_REQUEST)
