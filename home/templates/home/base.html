@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>M-Pesa FA</title>
+    <link rel='icon' href="{% static 'home/img/logoicon.ico' %}" type='image/x-icon' />
+    <link rel='shortcut icon' href="{% static 'home/img/logoicon.ico' %}" type='image/x-icon' />
+
+
+    <link rel="stylesheet" href="{% static 'home/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'home/bootstrap/css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'home/bootstrap/css/bootstrap-reboot.css' %}">
+    {% block content_css %}
+    
+    {% endblock  %}
+
+    <!--<link rel="stylesheet" href="{% static 'home/css/cover.css' %}">-->
+    </head>
+<body>
+
+    {% block content_page %}
+    
+    {% endblock  %}
+
+
+    <script src="{% static 'home/js/jquery.js' %}"></script>
+    <script src="{% static 'home/bootstrap/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'home/bootstrap/js/bootstrap.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+{% extends "home/base.html" %}
+{% block content_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+{% endblock  %}
+{% block  content_page %}
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger navbar-costom fixed-top">
+    <a class="navbar-brand" href="#">mPesa WC</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a  class="nav-link" href="{% url 'url_home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a  class="nav-link" href="{% url 'url_pay' %}">Pagamento</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link no-hover">Consulta</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link no-hover" href="#">Devolver volor</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container h-100" style="margin-top: 5rem">
+    <div class="row h-100 justify-content-md-center">
+        <!--aside information-->
+
+
+
+
+        <!--Mai content-->
+        <main class="col-12 col-md-8">
+            <div class="card mb-3 shadow-box" style="margin-bottom: 2rem;">
+                <div class="card-header" style="padding-bottom: 5px;">
+                    Descrição
+                </div>
+
+                <div class="card-body">
+                    <p class="card-text" style="margin-top: 10px;">
+                        A chamada da API do C2B é usada como uma transação padrão de cliente para empresa. <br>
+                        Os fundos da carteira móvel do cliente serão deduzidos e transferidos para a carteira móvel da empresa. Para autenticar e autorizar esta transação, o M-Pesa enviará uma mensagem USSD ao cliente para coletar o seu número PIN da móvel. Esse número não é armazenado e é usado apenas para autorizar a transação.
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-3 shadow-box" style="margin-bottom: 2rem;">
+                <div class="card-header" style="padding-bottom: 5px;">
+                    M-Pesa WC
+                </div>
+
+                <div class="card-body">
+                    <p class="card-text" style="margin-top: 10px;">
+                        Para fazer a chamada da API do C2B do m-pesa através do <b>mPesa Without Code</b> você tem de fazer uma requisição post para:<br>
+                        <span style="color:#939">
+                            http://127.0.0.1:8001/api/purchase/
+                        </span><br><br>
+                        Veja abaixo o cabeçalho
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-3 shadow-box" style="margin-bottom: 2rem;">
+                <div class="card-header" style="padding-bottom: 5px;">
+                    Parametros
+                </div>
+
+                <div class="card-body">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Nome</th>
+                          <th scope="col">Descricao</th>
+                          <th scope="col">Possiveis Valores</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>amount</td>
+                          <td>Valor da transacao</td>
+                          <td>Valor do produto</td>
+                      </tr>
+                      <tr>
+                        <td>msidsn</td>
+                        <td>Numero de telefone do cliente</td>
+                        <td>Numero vodacom valido (840000000)</td>
+                    </tr>
+                          <tr>
+                            <td>product</td>
+                            <td>Nome do produto</td>
+                            <td>Banana de boane</td>
+                        </tr>
+                          <tr>
+                            <td>api_key</td>
+                            <td>você pode ter acesso à sua chave de API na sua conta</td>
+                            <td>Api Key que esta na tua conta</td>
+                          </tr>
+                          <tr>
+                            <td>public_key</td>
+                            <td>você pode ter acesso à sua chave pública na sua conta</td>
+                            <td>Public Key que esta na tua conta</td>
+                          </tr>
+                          <tr>
+                            <td>business</td>
+                            <td>Nome do negocio ou da aplicacao</td>
+                            <td>"Nelzio Comercial"</td>
+                          </tr>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card mb-3 shadow-box" style="margin-bottom: 2rem;">
+                <div class="card-header" style="padding-bottom: 5px;">
+                    Exemplo com axios
+                </div>
+
+                <div class="card-body">
+                    <script src="https://gist.github.com/Nelzio/e4f4438ff609361c0ec2d8a2b0df95b2.js"></script>
+                </div>
+            </div>
+        </main>
+        
+    </div>
+</div>
+{% endblock  %}
