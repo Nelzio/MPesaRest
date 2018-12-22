@@ -5,7 +5,6 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework.response import Response
 from .mpesa import payment
-from .froms import EntradasModelForm
 from .models import EntradasApi
 
 

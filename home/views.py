@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from .models import Entradas
-from .forms import EntradasModelForm
 
 
 def home(request):
