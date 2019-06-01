@@ -20,8 +20,6 @@ def randomString(stringLength=6):
 
 @api_view(['POST'])
 def c2b_api(request, format=None):
-    if request.method == 'GET':
-        return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'POST':
         cad = EntradasApi(page="API Payment")  # @classmethod is used here
@@ -43,8 +41,6 @@ def c2b_api(request, format=None):
 
 @api_view(['POST'])
 def b2c_api(request, format=None):
-    if request.method == 'GET':
-        return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'POST':
         cad = EntradasApi(page="API Payment")  # @classmethod is used here
