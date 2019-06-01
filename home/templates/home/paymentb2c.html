@@ -52,21 +52,21 @@
 
                 <div class="card-body">
                     <p class="card-text" style="margin-top: 10px;">
-                        A chamada da API do C2B é usada como uma transação padrão de cliente para empresa. <br>
-                        Os fundos da carteira móvel do cliente serão deduzidos e transferidos para a carteira móvel da empresa. Para autenticar e autorizar esta transação, o M-Pesa enviará uma mensagem USSD ao cliente para coletar o seu número PIN da móvel. Esse número não é armazenado e é usado apenas para autorizar a transação.
+                        A chamada da API do B2C é usada como uma transação padrão de empresa para cliente. <br>
+                        Os fundos da carteira móvel da empresa serão deduzidos e transferidos para a carteira móvel do terceiro cliente.
                     </p>
                 </div>
             </div>
             <div class="card mb-3 shadow-box" style="margin-bottom: 2rem;">
                 <div class="card-header" style="padding-bottom: 5px;">
-                    M-Pesa FA
+                    M-Pesa WSDK
                 </div>
 
                 <div class="card-body">
                     <p class="card-text" style="margin-top: 10px;">
-                        Para usar a API C2B do m-pesa através do <b>M-Pesa FA</b> você tem de fazer uma requisição post para:<br>
+                        Para usar a API B2C do m-pesa através do <b>M-Pesa FA</b> você tem de fazer uma requisição post para:<br>
                         <span style="color:#939">
-                            https://mpesa-fa.herokuapp.com/api/c2b/
+                            https://mpesa-fa.herokuapp.com/api/b2c/
                         </span><br><br>
                         Veja abaixo o cabeçalho
                     </p>
@@ -123,7 +123,7 @@
                 </div>
 
                 <div class="card-body">
-                    <script src="https://gist.github.com/Nelzio/a9f06c986a76ecb3c1ad467afa175de7.js"></script>
+                    <script src="https://gist.github.com/Nelzio/f9d17e60062e79100753d7c41bac6d7f.js"></script>
                 </div>
             </div>
         </main>
