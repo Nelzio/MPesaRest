@@ -9,3 +9,8 @@ class EntradasApi(models.Model):
     def create(cls, page):
         entrada = cls(page=page)
         return entrada
+
+
+class UsersApiProduction(models.Model):
+    name = models.CharField(max_length=50)
+    code = models.IntegerField(default=0, null=False, blank=False)

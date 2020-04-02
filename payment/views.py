@@ -5,7 +5,7 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework.response import Response
 from .mpesa import payment
-from .models import EntradasApi
+from .models import EntradasApi, UsersApiProduction
 import random
 import string
 
@@ -20,8 +20,13 @@ def randomString(stringLength=6):
 
 @api_view(['POST'])
 def c2b_api(request, format=None):
-
+        
     if request.method == 'POST':
+        if request.data['env'] == "prod":
+            code = UsersApiProduction.objects.get(code=request.data['code'])
+            if code == None:
+                return Response(status=status.HTTP_401_UNAUTHORIZED)
+
         cad = EntradasApi(page="API Payment")  # @classmethod is used here
         cad.save()
 
@@ -42,6 +47,10 @@ def c2b_api(request, format=None):
 
 @api_view(['POST'])
 def b2c_api(request, format=None):
+    if request.data['env'] == "prod":
+            code = UsersApiProduction.objects.get(code=request.data['code'])
+            if code == None:
+                return Response(status=status.HTTP_401_UNAUTHORIZED)
 
     if request.method == 'POST':
         cad = EntradasApi(page="API Payment")  # @classmethod is used here
