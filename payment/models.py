@@ -12,5 +12,6 @@ class EntradasApi(models.Model):
 
 
 class UsersApiProduction(models.Model):
-    name = models.CharField(max_length=50)
-    code = models.IntegerField(default=0, null=False, blank=False)
+    name = models.CharField(max_length=50, null=True, blank=True)
+    code = models.IntegerField(default=0, null=True, blank=True)
+    shortApiKey = models.CharField(max_length=5, null=True, blank=True)
