@@ -42,7 +42,10 @@ def payment(**kwargs):  # antes main sem argumento | passar os values
 
     api_request = APIRequest(api_context)
     result = api_request.execute()
+    # =====
+    # # pprint(result.status_code)
+    # # pprint(result.headers)
+    # # pprint(result.body)
+    # # pprint(result)
+    # =====
     return result
-    # pprint(result.status_code)
-    # pprint(result.headers)
-    # pprint(result.body)
