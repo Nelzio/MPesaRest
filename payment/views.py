@@ -46,7 +46,7 @@ def c2b_api(request, format=None):
 
 @api_view(['POST'])
 def b2c_api(request, format=None):
-    if and request.data['code']:
+    if request.data['code']:
             code = UsersApiProduction.objects.get(code=request.data['code'])
             if code == None:
                 return Response(status=status.HTTP_401_UNAUTHORIZED)
