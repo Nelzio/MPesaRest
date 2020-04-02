@@ -21,11 +21,7 @@ def payment(**kwargs):  # antes main sem argumento | passar os values
     api_context.public_key = kwargs['public_key']
     api_context.ssl = True
     api_context.method_type = APIMethodType.POST
-    if kwargs['env'] == "prod":
-        api_context.address = 'api.vm.co.mz'
-    else:
-        api_context.address = 'api.sandbox.vm.co.mz'
-    
+    api_context.address = 'api.sandbox.vm.co.mz'
     if kwargs['method'] == "C2B":
         api_context.port = 18352
         api_context.path = '/ipg/v1x/c2bPayment/singleStage/'
