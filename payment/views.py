@@ -22,11 +22,11 @@ def randomString(stringLength=6):
 def c2b_api(request, format=None):
         
     if request.method == 'POST':
-        # if request.data['code']:
-        #     code = UsersApiProduction.objects.get(code=int(request.data['code']), shortcodeapi=request.data['api_key'][:5])
-        #     if code == None:
-        #         return Response(status=status.HTTP_401_UNAUTHORIZED)
-
+        if request.data['code']:
+            code = UsersApiProduction.objects.get(code=int(request.data['code']), shortcodeapi=request.data['api_key'][:5])
+            if code == None:
+                return Response(status=status.HTTP_401_UNAUTHORIZED)
+        print("OLA2")
         cad = EntradasApi(page="API Payment")  # @classmethod is used here
         cad.save()
         result = payment(
@@ -45,11 +45,10 @@ def c2b_api(request, format=None):
 
 @api_view(['POST'])
 def b2c_api(request, format=None):
-    # if request.data['code']:
-    #         code = UsersApiProduction.objects.get(code=request.data['code'])
-    #         if code == None:
-    #             return Response(status=status.HTTP_401_UNAUTHORIZED)
-
+    if request.data['code']:
+        code = UsersApiProduction.objects.get(code=request.data['code'], shortcodeapi=request.data['api_key'][:5])
+        if code == None:
+            return Response(status=status.HTTP_401_UNAUTHORIZED)
     if request.method == 'POST':
         cad = EntradasApi(page="API Payment")  # @classmethod is used here
         cad.save()
