@@ -31,6 +31,7 @@ def c2b_api(request, format=None):
                 public_key = request.data['public_key'],
                 msidsn=request.data['msidsn'],
                 amount=request.data['amount'],
+                env=request.data['env'], # environment
                 # title=request.data['title'],
                 # business=request.data['business'],
                 thirdParty=randomString() # thirdParty,
@@ -52,6 +53,7 @@ def b2c_api(request, format=None):
             public_key = request.data['public_key'],
             msidsn=request.data['msidsn'],
             amount=request.data['amount'],
+            env=request.data['env'], # environment
             # business='e-Compra',
             thirdParty=randomString() # thirdParty,
         )
