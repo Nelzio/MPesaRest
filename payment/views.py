@@ -23,7 +23,7 @@ def c2b_api(request, format=None):
         
     if request.method == 'POST':
         if request.data['env'] == "prod":
-            code = UsersApiProduction.objects.get(code=request.data['code'])
+            code = UsersApiProduction.objects.get(code=request.data['code'], shortcodeapi=request.data['api_key'][:5])
             if code == None:
                 return Response(status=status.HTTP_401_UNAUTHORIZED)
 
