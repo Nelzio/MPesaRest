@@ -22,7 +22,7 @@ def randomString(stringLength=6):
 def c2b_api(request, format=None):
         
     if request.method == 'POST':
-        if request.data['env'] and request.data['env'] == "prod" and request.data['code']:
+        if request.data['code']:
             code = UsersApiProduction.objects.get(code=int(request.data['code']), shortcodeapi=request.data['api_key'][:5])
             if code == None:
                 return Response(status=status.HTTP_401_UNAUTHORIZED)
@@ -36,7 +36,7 @@ def c2b_api(request, format=None):
                 public_key = request.data['public_key'],
                 msidsn=request.data['msidsn'],
                 amount=request.data['amount'],
-                env=request.data['env'], # environment
+                serviceprovidercode=request.data['serviceprovidercode'], # environment
                 # title=request.data['title'],
                 # business=request.data['business'],
                 thirdParty=randomString() # thirdParty,
@@ -47,7 +47,7 @@ def c2b_api(request, format=None):
 
 @api_view(['POST'])
 def b2c_api(request, format=None):
-    if request.data['env'] and request.data['env'] == "prod" and request.data['code']:
+    if and request.data['code']:
             code = UsersApiProduction.objects.get(code=request.data['code'])
             if code == None:
                 return Response(status=status.HTTP_401_UNAUTHORIZED)
@@ -62,7 +62,7 @@ def b2c_api(request, format=None):
             public_key = request.data['public_key'],
             msidsn=request.data['msidsn'],
             amount=request.data['amount'],
-            env=request.data['env'], # environment
+            serviceprovidercode=request.data['serviceprovidercode'], # environment
             # business='e-Compra',
             thirdParty=randomString() # thirdParty,
         )

@@ -35,10 +35,8 @@ def payment(**kwargs):  # antes main sem argumento | passar os values
     api_context.add_parameter('input_CustomerMSISDN','258{0}'.format(kwargs['msidsn']))
     api_context.add_parameter('input_Amount','{0}'.format(kwargs['amount']))
     api_context.add_parameter('input_ThirdPartyReference',kwargs['thirdParty'])
-    if kwargs['env'] == "prod":
-        api_context.add_parameter('input_ServiceProviderCode','900283')
-    else:
-        api_context.add_parameter('input_ServiceProviderCode','171717')
+    api_context.add_parameter('input_ServiceProviderCode',kwargs['serviceprovidercode'])
+    # api_context.add_parameter('input_ServiceProviderCode','171717')
 
 
 
