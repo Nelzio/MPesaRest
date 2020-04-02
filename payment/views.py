@@ -37,7 +37,6 @@ def c2b_api(request, format=None):
                 msidsn=request.data['msidsn'],
                 amount=request.data['amount'],
                 serviceprovidercode=request.data['serviceprovidercode'], # environment
-                # title=request.data['title'],
                 # business=request.data['business'],
                 thirdParty=randomString() # thirdParty,
             )
@@ -63,7 +62,6 @@ def b2c_api(request, format=None):
             msidsn=request.data['msidsn'],
             amount=request.data['amount'],
             serviceprovidercode=request.data['serviceprovidercode'], # environment
-            # business='e-Compra',
             thirdParty=randomString() # thirdParty,
         )
         return Response(result.body, status=result.status_code)
