@@ -42,6 +42,7 @@ def c2b_api(request, format=None):
                 # business=request.data['business'],
                 thirdParty=randomString() # thirdParty,
             )
+        
         return Response(result.body, status=result.status_code)
     return Response(status=status.HTTP_400_BAD_REQUEST)
 
